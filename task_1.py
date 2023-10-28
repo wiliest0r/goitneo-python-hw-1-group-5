@@ -26,3 +26,6 @@ users = [
         "birthday": datetime(1955, 10,  28)
         }
 ]
+
+today = datetime.today().date()
+print(today)
