@@ -4,11 +4,18 @@
 та відповідає відповідно до введеної команди.
 '''
 
+def parse_input(user_input):
+    ''' parse input'''
+    cmd, *args = user_input.split()
+    cmd = cmd.strip().lower()
+    return cmd, *args
+
 def main():
-    ''' main func'''
+    ''' core func'''
     print("Welcome to the assistant bot!")
     while True:
-        command = input("Enter a command: ").strip().lower()
+        user_input = input("Enter a command: ")
+        command, *args = parse_input(user_input)
 
         if command in ["close", "exit"]:
             print("Good bye!")
