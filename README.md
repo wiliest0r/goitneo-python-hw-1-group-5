@@ -1,1 +1,1 @@
-# goitneo-python-hw-1-group-5
+# Домашнє завдання №1
