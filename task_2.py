@@ -4,6 +4,7 @@
 та відповідає відповідно до введеної команди.
 '''
 
+
 def parse_input(user_input):
     '''
     Processing of the entered text
@@ -14,6 +15,7 @@ def parse_input(user_input):
     cmd = cmd.strip().lower()
     return cmd, *args
 
+
 def add_contact(args, contacts):
     '''
     Create contact func.
@@ -22,12 +24,13 @@ def add_contact(args, contacts):
 
     if len(args) != 2:
         return "Expected two arguments: name and phone number."
-    input_name, phone = args # unpack args:
+    input_name, phone = args  # unpack args:
     if input_name in contacts:
         # print("user exists")
         return f'User with name {input_name} already exist.'
     contacts[input_name] = phone
     return "Contact added."
+
 
 def change_contact(args, contacts):
     '''
@@ -45,6 +48,7 @@ def change_contact(args, contacts):
         message = "Contact does not exist."
     return message
 
+
 def search_phone(args, contacts):
     '''
     Returns user phone number according to input username.
@@ -54,6 +58,7 @@ def search_phone(args, contacts):
     if input_name in contacts:
         return contacts[input_name]
     return "User does not exist."
+
 
 def main():
     '''
@@ -66,7 +71,7 @@ def main():
                      "add [username] [phone]",
                      "change [username] [phone]",
                      "phone [username]",
-                     "all","close or exit"]
+                     "all", "close or exit"]
     print("\nWelcome to the assistant bot!\n")
     print(f'Available commands: \n\n {" | ".join(commands_list)}\n')
     while True:
@@ -89,6 +94,7 @@ def main():
                 print(f'Name: {username}, Phone: {phone}')
         else:
             print("Invalid command.")
+
 
 if __name__ == "__main__":
     main()
